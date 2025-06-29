@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  upload-job-production:
+  upload-job-develop:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -23,8 +23,8 @@ jobs:
           path: ./dist
           name: build-artifact-develop
 
-  deploy-job-production:
-    needs: upload-job-production
+  deploy-job-develop:
+    needs: upload-job-develop
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -38,4 +38,3 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: build-artifact-develop
-          token: ${{ github.token }}
