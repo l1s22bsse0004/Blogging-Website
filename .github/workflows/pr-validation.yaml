@@ -24,4 +24,4 @@ jobs:
      - name: Checkout Repository
        uses: actions/checkout@v4
      - name: Build Project
-       run: npx parcel build "./src/*.html" --dist-dir "./dist" --public-url "./"
+       run: npx parcel build ".**/*.html" --dist-dir "./dist" --public-url "./"
